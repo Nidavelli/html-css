@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animals Vertical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: "Itim";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #cacbd6;
+        }
+        p{
+            margin: 0;
+        }
+        .animal-following{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+        .animal:nth-child(odd) {
+            background-color: rgb(230, 213, 213);
+        }
+        .animal:hover:nth-child(odd) {
+            background-color: rgb(241, 237, 213);
+        }
+        
+        .animal:nth-child(even) {
+            background-color: rgb(216, 235, 225);
+        }
+        .animal:hover:nth-child(even) {
+            background-color: rgb(226, 206, 243);
+        }
+        
+        .animal{
+            width: 480px;
+            box-shadow: 0 0 10px #ccc;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content:space-between;
+            border-radius: 20px;
+            transition: all 0.6s ease-in-out;
+            transition-delay: 0.05s;
+            margin-top: 10px;
+        }
+        .animal:hover{
+            box-shadow: 0 0 20px #70705e;
+            background-color: antiquewhite;
+            scale: 1.05;
+            rotate: 1deg;
+        }
+
+        #animal-picture{
+            display: inline-block;
+            width: 65px;
+            height: 65px;
+            
+            vertical-align: top; 
+        }
+        #profile-picture{
+            width: 100%;
+            height: 100%;   
+            object-fit: cover;
+            overflow: hidden;
+            border-radius: 40px;
+
+        }
+
+        #animal-details{
+            flex: 1;
+            margin-left: 20px;
+            line-height: 20px;
+        }
+        #animal-name{
+            color: black;
+            font-weight: bold;
+        }
+        #animal-type,#popularity{
+            color: rgb(83, 81, 81);
+        }
+
+        #follow{
+            display: inline-block;
+            padding-top: 8px;
+            flex:0.3;
+            
+        }
+        button{
+            font-family: "Itim";
+            font-weight: bold;
+            color: white;
+            background-color: rgb(11, 163, 209);
+            border: none;
+            padding: 13px;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+        button:hover{
+            opacity: 0.9;
+            border-radius: 20px;
+            background-color: rgb(10, 105, 134);
+        }
+        button:active{
+            opacity: 0.7;
+            border-radius: 20px;
+            background-color: rgb(10, 105, 134);
+        }
+    </style>
+</head>
+<body>
+    <div class="animal-following">
+        <div class="animal">
+            <div id="animal-picture">
+                <img id="profile-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgfrgg78EtEpwKUevRImKsaLNQZ76amh6heg&s" alt="cat">
+            </div>
+            <div id="animal-details">
+                <p id="animal-name">oliver</p>
+                <p id="animal-type">the cat</p>
+                <p id="popularity">Popular</p>
+            </div>
+            <div id="follow">
+                <button>Follow</button>
+            </div>
+        </div>
+        
+        <div class="animal">
+            <div id="animal-picture">
+                <img id="profile-picture" src="data:image/jpeg;base64,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" alt="poodle">
+            </div>
+            <div id="animal-details">
+                <p id="animal-name">Momo</p>
+                <p id="animal-type">the poodle</p>
+                <p id="popularity">Popular</p>
+            </div>
+            <div id="follow">
+                <button>Follow</button>
+            </div>
+        </div>
+    
+        <div class="animal">
+            <div id="animal-picture">
+                <img id="profile-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC5JMQZnn8lfmOzefa6LslpS6QbjKP6IbSNg&s" alt="dog">
+            </div>
+            <div id="animal-details">
+                <p id="animal-name">Buddy</p>
+                <p id="animal-type">The Dog</p>
+                <p id="popularity">Friendly</p>
+            </div>
+            <div id="follow">
+                <button>Follow</button>
+            </div>
+        </div>
+        <!-- Animal 3 -->
+        <div class="animal">
+            <div id="animal-picture">
+                <img id="profile-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfgJJvZjOq9H0ri_lUoT2J6Sbn3LUrp7TInQ&s" alt="rabbit">
+            </div>
+            <div id="animal-details">
+                <p id="animal-name">Thumper</p>
+                <p id="animal-type">The Rabbit</p>
+                <p id="popularity">Adorable</p>
+            </div>
+            <div id="follow">
+                <button>Follow</button>
+            </div>
+        </div>
+        <!-- Animal 4 -->
+        <div class="animal">
+            <div id="animal-picture">
+                <img id="profile-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4uxXhgF81N1zUmqFLEpg6RsZx1I3Q0-MTVg&s" alt="parrot">
+            </div>
+            <div id="animal-details">
+                <p id="animal-name">Polly</p>
+                <p id="animal-type">The Parrot</p>
+                <p id="popularity">Talkative</p>
+            </div>
+            <div id="follow">
+                <button>Follow</button>
+            </div>
+        </div>
+        <!-- Animal 5 -->
+        <div class="animal">
+            <div id="animal-picture">
+                <img id="profile-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXWPt03H9m7kmMhfddGbZKgxFrA5qJhz2lnw&s" alt="hamster">
+            </div>
+            <div id="animal-details">
+                <p id="animal-name">Nibbles</p>
+                <p id="animal-type">The Hamster</p>
+                <p id="popularity">Cuddly</p>
+            </div>
+            <div id="follow">
+                <button>Follow</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
