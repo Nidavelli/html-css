@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>positions</title>
+</head>
+<body style="height: 1000px; 
+            padding-top:70px;
+            padding-left: 120px">
+    <div style="
+        color:white;
+        background-color:rgba(0,0,0,0.5);
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        height:50px;
+        z-index:1;
+    ">
+        Header
+    </div>
+    <div style="
+        color:white;
+        background-color:rgba(137, 43, 226, 0.692);
+        position:fixed;
+        left:0;
+        top:50px;
+        bottom:0;
+        width:100px;
+    ">
+        Sidebar
+        <div style="
+        position:absolute;
+        background-color:red;
+        color:white;
+        right:0;
+        top:0;
+        width:10px;
+    ">
+        x
+    </div>
+    </div>
+
+    <div style="
+        position:absolute;
+        background-color:red;
+        color:white;
+        right:60px;
+    ">
+        absolute
+    </div>
+
+
+    <div style="
+        height:200px;
+        width:200px;
+        background-color:lightblue;
+    ">Div1</div>
+    <div style="
+        height:200px;
+        width:200px;
+        background-color:lightpink;
+        position:relative;
+    ">Div2
+        <div style="
+        position:absolute;
+        background-color:red;
+        color:white;
+        right:0;
+        top:0;
+    ">
+        absolute
+    </div></div>
+</body>
+</html>
